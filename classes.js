@@ -1,64 +1,65 @@
-class Color
+function drawHexagon(x, y)
 {
-  constructor(r,g,b)
-  {
-    this.r=r;
-    this.g=g;
-    this.b=b;
+const a = 2 * Math.PI / 6;
+const r = Math.floor(Math.random()*100);
+  ctx.beginPath();
+  for (var i = 0; i < 6; i++) {
+    ctx.lineTo(x + r * Math.cos(a * i), y + r * Math.sin(a * i));
   }
+  ctx.closePath();
+  ctx.stroke();
 }
 
-class Square
+function generateRandom(min = 50, max = 100)
 {
-  constructor(side, Color)
-  {
-    this.side = side;
-    this.Color=Color;
+
+  let difference = max - min;
+
+  let rand = Math.random();
+
+  rand = Math.floor( rand * difference);
+
+  rand = rand + min;
+
+  return rand;
+}
+
+function drawTriangle(x,y)
+{
+  ctx.strokeStyle = `rgb(
+    ${Math.floor(Math.random()*255)},
+    ${Math.floor(Math.random()*255)},
+    ${Math.floor(Math.random()*255)})`;
+
+    let a = generateRandom(30,300),
+    b = generateRandom(30,300),
+    c = generateRandom(30,300);
+
+    let angleC = Math.acos((c*c - a*a - b*b) / (2*a*b) );
+  if((a+b)<c || (a+c)<b || (b+c)<a)
+  { 
+  drawTriangle(x,y);
   }
-}
 
-class Circle
-{
-  constructor(x,y,radius,Color)
+  else
   {
-    this.x=x;
-    this.y=y;
-    this.radius=radius;
-    this.Color=Color;
-  }
-}
-
-function randomColor()
-{
-  
-  var r = Math.floor(Math.random()*255);
-  var g = Math.floor(Math.random()*255);
-  var b = Math.floor(Math.random()*255);
-
-  let newColor=new Color(r,g,b);
-  return newColor;
-}
-
-function randomCircle()
-{
-  var x = Math.floor(Math.random()*300);
-  var y = Math.floor(Math.random()*300);
-  var radius = Math.floor(Math.random()*20);
-
-  let newColor=randomColor();
-  let newCircle= new Circle(x,y,radius,newColor);
-  
-  return newCircle;
-}
-
-function randomSquare()
-{
-  var side=Math.floor(Math.random()*20);
-  
-  let newColor=randomColor();
-  let newSquare= new Square(side,newColor);
-  
-  return newSquare;
+  var triangle =
+  {
+    x1: x, 
+    y1: y, 
+    x2: x + a, 
+    y2: y,  
+    x3: x + b*Math.cos(angleC),
+    y3: y + b*Math.sin(angleC)
+   }
+ 
+ ctx.beginPath();
+ ctx.moveTo(triangle.x1, triangle.y1);
+ ctx.lineTo(triangle.x2, triangle.y2);
+ ctx.lineTo(triangle.x3, triangle.y3);
+ ctx.lineTo(triangle.x1, triangle.y1);
+ ctx.closePath();
+ ctx.stroke();}
 }
 
 function drawHexagon(x, y)
@@ -73,24 +74,23 @@ const r = Math.floor(Math.random()*100);
   ctx.stroke();
 }
 
-function mouseClicked (event){
-  // var xposition = (event.clientX - ctx.offsetLeft - ctx.offsetWidth/2);
-  // var yposition = (event.clientY - ctx.offsetTop - ctx.offsetHeight/2);
+function drawRectangle
+{
+  
+}
+
+function mouseClicked (event)
+{
   var xposition = event.clientX;
   var yposition = event.clientY;
-  //shape
-  //
-  // ctx.style.transform = "translate("+ xposition + "px," + yposition + "px)";
   ctx.beginPath();
-  // for (let i = 0; i < 100; i++) {
 let a = Math.floor(Math.random()*10);
 let b = Math.floor(Math.random()*10);
 ctx.strokeStyle = `rgb(
   ${Math.floor(Math.random()*255)},
   ${Math.floor(Math.random()*255)},
   ${Math.floor(Math.random()*255)})`;
-//ctx.strokeRect(xposition-100, yposition-100, xposition+100, yposition+100);
-drawHexagon(xposition, yposition);
+drawTriangle(xposition, yposition);
 ctx.closePath();
   // }
   console.log(event);
