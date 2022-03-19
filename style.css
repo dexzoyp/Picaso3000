@@ -1,4 +1,34 @@
+#myCanvas {
+    width: 1200;
+    height: 600;
+    background-color: white;
+    margin-top: 20px;
+    box-shadow: 5px 8px 8px 8px #888888;
+}
 #myDIV {
-    width: 800px;
-    height: 500px;
-  }
+  justify-content: center;
+  display: flex;
+}
+body {
+  background-color: rgb(194, 194, 194);
+}
+.topnav {
+  background-image: linear-gradient(rgb(35, 150, 245), white);
+  padding: 20px;
+}
+.button {
+  border: 1px solid transparent;
+  padding: 12px;
+  width: 90px;
+  margin-left: 10px;
+  background-color: rgb(64, 131, 233);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(26, 109, 235);
+}
