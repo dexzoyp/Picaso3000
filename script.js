@@ -52,18 +52,20 @@ function mouseClicked (event){
   var xposition = event.clientX;
   var yposition = event.clientY;
   //shape
-  //
-  // ctx.style.transform = "translate("+ xposition + "px," + yposition + "px)";
   ctx.beginPath();
-  // for (let i = 0; i < 100; i++) {
-let a = Math.floor(Math.random()*10);
-let b = Math.floor(Math.random()*10);
-ctx.strokeStyle = `rgb(
-  ${Math.floor(Math.random()*255)},
-  ${Math.floor(Math.random()*255)},
-  ${Math.floor(Math.random()*255)})`;
-ctx.strokeRect(xposition-100, yposition-100, xposition+100, yposition+100);
-ctx.closePath();
-  // }
+  let a = Math.floor(Math.random()*30);
+  let b = Math.floor(Math.random()*30);
+  ctx.fillStyle = `rgb(
+    ${Math.floor(Math.random()*255)},
+    ${Math.floor(Math.random()*255)},
+    ${Math.floor(Math.random()*255)})`;
+  ctx.strokeStyle = `rgb(
+    ${Math.floor(Math.random()*255)},
+    ${Math.floor(Math.random()*255)},
+    ${Math.floor(Math.random()*255)})`;
+    ctx.fillRect(xposition, yposition, a+xposition, b+yposition);
+    ctx.strokeRect(xposition, yposition, a+xposition, b+yposition);
+  ctx.closePath();
+  // ctx.moveTo(50, 140);
   console.log(event);
 }
