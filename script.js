@@ -18,44 +18,22 @@
 // }
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-
-ctx.beginPath();
-// Set line width
 ctx.lineWidth = 10;
-
-// Wall
-  // ctx.beginPath();
-  // let a = Math.floor(Math.random()*300);
-  // let b = Math.floor(Math.random()*300)
-  // ctx.strokeRect(a, a, a+100, a+100);
-  // ctx.closePath();
-  // // Door
-  // ctx.fillRect(130, 190, 40, 60);
-
-  // // Roof
-  // ctx.beginPath();
-  // ctx.moveTo(50, 140);
-  // ctx.lineTo(150, 60);
-  // ctx.lineTo(250, 140);
-  // ctx.closePath();
-  // ctx.stroke();
-  // ctx.closePath();
-
-var target = document.getElementById('target');
-var targetBox = document.getElementById('target-box1');
-
 canvas.addEventListener('click', mouseClicked);
 
-function mouseClicked (event){
-  // var xposition = (event.clientX - ctx.offsetLeft - ctx.offsetWidth/2);
-  // var yposition = (event.clientY - ctx.offsetTop - ctx.offsetHeight/2);
-  var xposition = event.clientX;
-  var yposition = event.clientY;
-  //shape
+let rng = function(number)
+{
+  return Math.floor(Math.random()*number);
+};
+function drawTest(xposition, yposition)
+{
   ctx.beginPath();
-  let a = Math.floor(Math.random()*30);
-  let b = Math.floor(Math.random()*30);
-  ctx.fillStyle = `rgb(
+  let a = rng(800);
+  let b = rng(600);
+  let width = rng(200);
+  let height = rng(200);
+  ctx.fillStyle = `rgba(
+    ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)})`;
@@ -63,9 +41,45 @@ function mouseClicked (event){
     ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)})`;
-    ctx.fillRect(xposition, yposition, a+xposition, b+yposition);
-    ctx.strokeRect(xposition, yposition, a+xposition, b+yposition);
+  ctx.fillRect(a, b, a+width, b+height);
+  ctx.strokeRect(a, b, a+width, b+height);
   ctx.closePath();
-  // ctx.moveTo(50, 140);
+}
+
+function mouseClicked (event){
   console.log(event);
+  var xposition = event.clientX;
+  var yposition = event.clientY;
+
+  //shape
+  //randomShape should be -1 for test
+  //let randomShape = rng(4);
+  let randomShape = -1;
+  if(randomShape = -1)
+  {
+    console.log(randomShape);
+    drawTest(xposition,yposition);
+  }
+  else if(randomShape == 0)
+  {
+    drawSquere(xposition,yposition);
+    console.log(randomShape);
+  }
+  else if(randomShape == 1)
+  {
+    drawRectangle(xposition,yposition);
+    console.log(randomShape);
+  }
+  else if(randomShape == 2)
+  {
+    drawHexagon(xposition,yposition);
+    console.log(randomShape);
+  }
+  else if(randomShape == 3)
+  {
+    drawCircle(xposition,yposition);
+    console.log(randomShape);
+  }
+  
+  
 }
