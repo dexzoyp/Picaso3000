@@ -41,8 +41,8 @@ function drawTest(xposition, yposition)
     ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)})`;
-  ctx.fillRect(a, b, a+width, b+height);
-  ctx.strokeRect(a, b, a+width, b+height);
+  ctx.fillRect(xposition, yposition, xposition+width, yposition+height);
+  ctx.strokeRect(xposition, yposition, xposition+width, yposition+height);
   ctx.closePath();
 }
 
@@ -53,33 +53,27 @@ function mouseClicked (event){
 
   //shape
   //randomShape should be -1 for test
-  //let randomShape = rng(4);
-  let randomShape = -1;
-  if(randomShape = -1)
+  let randomShape = rng(6);
+  console.log(randomShape);
+  // let randomShape = 2;
+  if(randomShape == 5)
   {
-    console.log(randomShape);
     drawTest(xposition,yposition);
   }
   else if(randomShape == 0)
   {
     drawSquere(xposition,yposition);
-    console.log(randomShape);
   }
   else if(randomShape == 1)
   {
     drawRectangle(xposition,yposition);
-    console.log(randomShape);
   }
   else if(randomShape == 2)
   {
     drawHexagon(xposition,yposition);
-    console.log(randomShape);
   }
   else if(randomShape == 3)
   {
     drawCircle(xposition,yposition);
-    console.log(randomShape);
   }
-  
-  
 }
