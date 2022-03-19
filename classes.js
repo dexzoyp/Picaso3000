@@ -80,7 +80,7 @@ function drawTriangle(x,y)
  ctx.stroke();}
 }
 
-function drawRectangle()
+function drawRectangle(xposition,yposition)
 { ctx.beginPath();
   let width = generateRandom(40,300);
   let height = generateRandom(40,300);
@@ -97,18 +97,18 @@ function drawRectangle()
   ctx.strokeRect(xposition-(width/2), yposition-(height/2), width, height);
   ctx.closePath();
 }
-
-function mouseClicked (event)
-{
-  var xposition = event.clientX;
-  var yposition = event.clientY;
-  ctx.beginPath();
-let a = Math.floor(Math.random()*10);
-let b = Math.floor(Math.random()*10);
-ctx.strokeStyle = `rgb(
-  ${Math.floor(Math.random()*255)},
-  ${Math.floor(Math.random()*255)},
-  ${Math.floor(Math.random()*255)})`;
-drawTriangle(xposition, yposition);
-ctx.closePath();
-}
+// export {drawCircle,drawHexagon,drawRectangle,drawTriangle}
+// function mouseClicked (event)
+// {
+//   var xposition = event.clientX;
+//   var yposition = event.clientY;
+//   ctx.beginPath();
+// let a = Math.floor(Math.random()*10);
+// let b = Math.floor(Math.random()*10);
+// ctx.strokeStyle = `rgb(
+//   ${Math.floor(Math.random()*255)},
+//   ${Math.floor(Math.random()*255)},
+//   ${Math.floor(Math.random()*255)})`;
+// drawTriangle(xposition, yposition);
+// ctx.closePath();
+// }
