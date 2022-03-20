@@ -39,21 +39,34 @@ body {
 .button:hover {
   background-color: rgb(226, 202, 17);
 }
-.brush-icon, .eraser-icon {
+.brush-icon, .eraser-icon, .square-icon, .triangle-icon {
   border: 1px solid transparent;
   padding: 12px;
   width: 60px;
   height: 30px;
   margin-left: 10px;
-  background-color: rgb(226, 202, 17);
+  background-color: rgb(235, 214, 61);
   color: black;
   font-size: 20px;
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
 }
-.brush-icon:hover, .eraser-icon:hover {
-  background-color: rgb(26, 109, 235);
+.square-icon, .triangle-icon, .circle-icon, .hexagon-icon {
+  border: 1px solid transparent;
+  padding: 12px;
+  width: 40px;
+  height: 30px;
+  margin-left: 10px;
+  background-color: rgb(235, 214, 61);
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.brush-icon:hover, .eraser-icon:hover, .square-icon:hover, .triangle-icon:hover, .circle-icon:hover, .hexagon-icon:hover {
+  background-color: rgb(226, 202, 17);
 }
 .color {
   margin-left: 5px;
