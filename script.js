@@ -16,7 +16,6 @@ let rng = function(number)
 {
   return Math.floor(Math.random()*number);
 };
-
 //properites
 ctx.lineWidth = 10;
 let lineWidthRNG = ctx.lineWidth;
@@ -28,12 +27,14 @@ let mouseMove = true;
 let learnMode = false;
 let picasoMode = false;
 
+
 document.getElementById('rng').addEventListener('click', function() {
   fullRNG = true;
   shapeRNG = true;
   colorRNG = true;
   mouseMove = true;
   learnMode = false;
+  picasoMode = false;
   ctx.clearRect(0, 0, 1200, 600);
 });
 document.getElementById('move').addEventListener('click', function() {
@@ -48,12 +49,14 @@ document.getElementById('learn').addEventListener('click', function() {
   mouseMove = false;
   fullRNG = false;
   picasoMode = false;
+  ctx.clearRect(0, 0, 1200, 600);
 });
 document.getElementById('picaso').addEventListener('click', function() {
   picasoMode = true;
   learnMode = false;
   fullRNG = false;
   mouseMove = false;
+  ctx.clearRect(0, 0, 1200, 600);
 });
 document.getElementById('triangle').addEventListener('click', function() {
   shapeRNG = false;
@@ -79,6 +82,11 @@ document.getElementById('clear').addEventListener('click', function() {
 //Save
 function download_image(){
   var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+  ctx.font = "100px picasoFont";
+  let sign = document.getElementById("signiture").value;
+  ctx.fillStyle = "black";
+  ctx.fillText(sign, 1020, 580);
   image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
   var link = document.createElement('a');
   link.download = "my-image.png";
@@ -188,8 +196,9 @@ function mouseClicked (event){
   }
   else if(picasoMode)
   {
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 10000; i++) {
       picasoShape = rng(4);
+      ctx.lineWidth = rng(10);
       let randomX = rng(1000);
       let randomY = rng(550);
       if(picasoShape == 0)

@@ -4,15 +4,20 @@
   }
 }
 
-@font-face {
+/* @font-face {
   font-family: myFirstFont;
   src: url(Jackpot.ttf);
+} */
+@font-face{
+  font-family: picasoFont;
+  src: url(SalingCinta.ttf);
 }
 
 h1 {
-  font-family: myFirstFont;
+  font-family: picasoFont;
   text-align: center;
   color: rgb(193,149,86);
+  font-weight: 900;
 }
 
 #myCanvas {
@@ -28,6 +33,7 @@ h1 {
 }
 body {
   background-color: rgb(194, 194, 194);
+  overflow: hidden;
 }
 .topnav {
   background-color: rgb(249, 253, 171);

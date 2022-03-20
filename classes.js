@@ -94,6 +94,15 @@ function drawTriangle(x,y)
  ctx.stroke();}
 
 }
+// const picasoImg = document.getElementById('picasoImg');
+let picasoImg = new Image();
+let picasoImg1 = new Image();
+let picasoImg2 = new Image();
+let picasoImg3 = new Image();
+picasoImg.src = './picaso0.jpg';
+picasoImg1.src = './picaso1.png';
+picasoImg2.src = './picaso2.png';
+picasoImg3.src = './picaso3.png';
 
 function drawRectangle(xposition,yposition)
 { ctx.beginPath();
@@ -103,27 +112,28 @@ function drawRectangle(xposition,yposition)
     ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)})`;
-  let num=generateRandom(0,2);
-  if(num==1)
-
+  let num=generateRandom(0,10);
+  if(num==1 || num==6 || num==7 ||  num==8 || num== 9)
   {
-    ctx.fillStyle=ctx.strokeStyle; ctx.fillRect(xposition-(width/2), yposition-(height/2), width, height);}
+    ctx.fillStyle=ctx.strokeStyle; ctx.fillRect(xposition-(width/2), yposition-(height/2), width, height);
+  }
+  else if(num == 2 )
+  {
+    ctx.drawImage(picasoImg1,xposition-(width/2), yposition-(height/2), width, height)
+  }
+  else if(num == 3 )
+  {
+    ctx.drawImage(picasoImg2,xposition-(width/2), yposition-(height/2), width, height)
+  }
+  else if(num == 4 )
+  {
+    ctx.drawImage(picasoImg3,xposition-(width/2), yposition-(height/2), width, height)
+  }
+  else if(num == 5 )
+  {
+    ctx.drawImage(picasoImg,xposition-(width/2), yposition-(height/2), width, height)
+  }
   
   ctx.strokeRect(xposition-(width/2), yposition-(height/2), width, height);
   ctx.closePath();
 }
-// export {drawCircle,drawHexagon,drawRectangle,drawTriangle}
-// function mouseClicked (event)
-// {
-//   var xposition = event.clientX;
-//   var yposition = event.clientY;
-//   ctx.beginPath();
-// let a = Math.floor(Math.random()*10);
-// let b = Math.floor(Math.random()*10);
-// ctx.strokeStyle = `rgb(
-//   ${Math.floor(Math.random()*255)},
-//   ${Math.floor(Math.random()*255)},
-//   ${Math.floor(Math.random()*255)})`;
-// drawTriangle(xposition, yposition);
-// ctx.closePath();
-// }
