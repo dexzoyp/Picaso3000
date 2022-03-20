@@ -22,8 +22,8 @@ let rng = function(number)
 function mouseDragged(event) 
 {
   console.log(event)
-  let xposition = event.clientX - canvas.offsetLeft;
-  let yposition = event.clientY - canvas.offsetTop;
+  let xposition =event.clientX;
+  let yposition = event.clientY-canvas.offsetHeight;
   console.log (xposition);
   console.log (yposition);
   let randomShape = rng(5);
