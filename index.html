@@ -13,12 +13,12 @@
         <button type="submit" id="rng" class="button">RNG</button>
         <button type="submit" id="learn" class="button">Learn</button>
         <button type="submit" id="move" class="button">Mouse move</button>
-        <button type="submit" id="save" class="button" download="my-file-name.png">Save</button>
+        <button type="submit" id="save" class="button" onclick="download_image()">Save</button>
         <button type="submit" id="clear" class="button">Reset</button>
         <div>
             <label for="size">Pen size</label><br>
-            <input type="range" id="size" name="size" min="0" max="10">
-          </div>
+            <input type="range" id="size" name="size" value="10" step="0.01" min="0.01" max="1">
+        </div>
         <input type="color" id="color" class="color"/>
         <img src="square.jpg" id="square" class="square-icon">
         <img src="triangle.png" id="triangle" class="triangle-icon">
