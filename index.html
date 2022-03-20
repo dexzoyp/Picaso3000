@@ -9,16 +9,22 @@
 </head>
 <body>
     <div class="topnav">
-        <button type="submit" class="button">RNG</button>
-        <button type="submit" class="button">Save</button>
+        <button type="submit" id="rng" class="button">RNG</button>
+        <button type="submit" id="save" class="button">Save</button>
         <button type="submit" id="clear" class="button">Reset</button>
-        <img src="brush.png" class="brush-icon">
-        <img src="eraser.png" class="eraser-icon">
-        <input type="color" class="color"/>
-        <img src="square.jpg" class="square-icon">
-        <img src="triangle.png" class="triangle-icon">
-        <img src="circle.png" class="circle-icon">
-        <img src="hexagon.jpg" class="hexagon-icon">
+        <img src="brush.png" id="brush" class="brush-icon">
+        <div>
+            <label for="size">Pen size</label><br>
+            <input type="range" id="size" name="size" min="0" max="10">
+          </div>
+        <img src="eraser.png" id="eraser" class="eraser-icon">
+        <input type="color" id="color" class="color"/>
+        <img src="square.jpg" id="square" class="square-icon">
+        <img src="triangle.png" id="triangle" class="triangle-icon">
+        <img src="circle.png" id="circle" class="circle-icon">
+        <img src="hexagon.jpg" id="hexagon" class="hexagon-icon">
+        <button type="submit" id="move" class="button">Mouse move</button>
+        <button type="submit" id="learn" class="button">Learn</button>
     </div>
 
     <div id="myDIV">
