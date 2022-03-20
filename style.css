@@ -4,12 +4,23 @@
   }
 }
 
+@font-face {
+  font-family: myFirstFont;
+  src: url(Jackpot.ttf);
+}
+
+h1 {
+  font-family: myFirstFont;
+  text-align: center;
+  color: rgb(193,149,86);
+}
+
 #myCanvas {
     width: 1200px;
     height: 600px;
     background-color: white;
-    margin-top: 20px;
-    box-shadow: 5px 8px 8px 8px #888888;
+    /* margin-top: 20px; */
+    /* box-shadow: 5px 8px 8px 8px #888888; */
 }
 #myDIV {
   justify-content: center;
@@ -22,7 +33,12 @@ body {
   background-color: rgb(249, 253, 171);
   padding: 15px;
   border-radius: 10px;
+  margin-bottom: 20px;
   display: flex;
+}
+.myborder {
+  border: 40px solid white;
+  border-image: url(border2.png) 120 stretch; 
 }
 .button {
   border: 1px solid transparent;
@@ -37,6 +53,22 @@ body {
   cursor: pointer;
 }
 .button:hover {
+  background-color: rgb(226, 202, 17);
+}
+a {
+  border: 1px solid transparent;
+  padding: 12px;
+  width: 60px;
+  margin-left: 10px;
+  background-color: rgb(235, 214, 61); 
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+a:hover {
   background-color: rgb(226, 202, 17);
 }
 .brush-icon, .eraser-icon, .square-icon, .triangle-icon {
@@ -72,6 +104,9 @@ body {
   font-size: 15px;
   height: 60px;
   width: 90px;
+}
+#picaso {
+  width: 135px;
 }
 label {
   font-size: 20px;
