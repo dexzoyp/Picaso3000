@@ -196,7 +196,7 @@ function mouseClicked (event){
   }
   else if(picasoMode)
   {
-    for (let i = 0; i < 10000; i++) {
+    for (let i = 0; i < 1000; i++) {
       picasoShape = rng(4);
       ctx.lineWidth = rng(10);
       let randomX = rng(1000);
