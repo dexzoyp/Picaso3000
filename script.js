@@ -19,10 +19,14 @@ let rng = function(number)
   return Math.floor(Math.random()*number);
 };
 
+document.getElementById('clear').addEventListener('click', function() {
+  ctx.clearRect(0, 0, 1200, 600);
+}, false);
+
 function mouseDragged(event) 
 {
   console.log(event)
-  let xposition =event.clientX;
+  let xposition =event.clientX-155;
   let yposition = event.clientY-canvas.offsetHeight;
   console.log (xposition);
   console.log (yposition);
