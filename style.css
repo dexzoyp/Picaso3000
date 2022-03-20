@@ -1,3 +1,9 @@
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  * {
+    width: 100%;
+  }
+}
 #myCanvas {
     width: 1200;
     height: 600;
@@ -48,4 +54,11 @@ body {
 }
 .brush-icon:hover, .eraser-icon:hover {
   background-color: rgb(26, 109, 235);
+}
+.color {
+  margin-left: 5px;
+  width: 80px;
+  height: 55px;
+  border-radius: 10px;
+  cursor: pointer;
 }
