@@ -15,7 +15,7 @@ function generateRandom(min, max)
 function drawHexagon(x, y)
 {
 const a = 2 * Math.PI / 6;
-const r = Math.floor(Math.random()*300);
+const r = Math.floor(Math.random()*200);
 ctx.strokeStyle = `rgb(
   ${Math.floor(Math.random()*255)},
   ${Math.floor(Math.random()*255)},
@@ -34,7 +34,7 @@ ctx.strokeStyle = `rgb(
 
 function drawCircle(x,y)
 {
-  let r=generateRandom(20,300);
+  let r=generateRandom(20,150);
   ctx.strokeStyle = `rgb(
     ${Math.floor(Math.random()*255)},
     ${Math.floor(Math.random()*255)},
