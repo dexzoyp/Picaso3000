@@ -7,11 +7,12 @@ function locateRay(number, count, x, y, phase) {
 }
 
 function drawSymBrush(mouseX, mouseY) {
+    if (Math.abs(oldP[0] - mouseX) > 50 || Math.abs(oldP[1] - mouseY) > 50) {
+        oldP = [mouseX, mouseY];
+    }
     phase += Math.PI / 20;
     ctx.lineWidth = 5;
     ctx.beginPath();
-    ctx.moveTo(oldP[0], oldP[1]);
-    ctx.lineTo(mouseX, mouseY);
     ctx.stroke();
     for (i = 0; i < rayCount; i++) {
         p1 = locateRay(i, rayCount, oldP[0], oldP[1], phase - Math.PI / 20);

@@ -148,7 +148,6 @@ function mouseDragged(event)
           drawCircle(xposition, yposition);
       }
       else if (shape == 4) {
-          oldP = [event.offsetX, event.offsetY];
           drawSymBrush(xposition, yposition);
       }
     }
