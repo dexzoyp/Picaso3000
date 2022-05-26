@@ -26,6 +26,7 @@ let colorRNG = true;
 let mouseMove = true;
 let learnMode = false;
 let picasoMode = false;
+var oldP = [0, 0];
 
 
 document.getElementById('rng').addEventListener('click', function() {
@@ -73,6 +74,10 @@ document.getElementById('circle').addEventListener('click', function() {
 document.getElementById('hexagon').addEventListener('click', function() {
   shapeRNG = false;
   shape = 2;
+});
+document.getElementById('symbrush').addEventListener('click', function() {
+  shapeRNG = false;
+  shape = 4;
 });
 //Clean
 document.getElementById('clear').addEventListener('click', function() {
@@ -130,21 +135,20 @@ function mouseDragged(event)
   }
     else if(!fullRNG && mouseMove)
     {
-      if(shape == 0)
-      {
-        drawTriangle(xposition,yposition);
+      if (shape == 0) {
+          drawTriangle(xposition, yposition);
       }
-      else if(shape == 1)
-      {
-        drawRectangle(xposition,yposition);
+      else if (shape == 1) {
+          drawRectangle(xposition, yposition);
       }
-      else if(shape == 2)
-      {
-        drawHexagon(xposition,yposition);
+      else if (shape == 2) {
+          drawHexagon(xposition, yposition);
       }
-      else if(shape == 3)
-      {
-        drawCircle(xposition,yposition);
+      else if (shape == 3) {
+          drawCircle(xposition, yposition);
+      }
+      else if (shape == 4) {
+          drawSymBrush(xposition, yposition);
       }
     }
 }
