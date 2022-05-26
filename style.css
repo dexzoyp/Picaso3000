@@ -90,7 +90,7 @@ a:hover {
   border-radius: 10px;
   cursor: pointer;
 }
-.square-icon, .triangle-icon, .circle-icon, .hexagon-icon {
+.square-icon, .triangle-icon, .circle-icon, .hexagon-icon, .symbrush-icon {
   border: 1px solid transparent;
   padding: 12px;
   width: 40px;
@@ -103,7 +103,7 @@ a:hover {
   border-radius: 10px;
   cursor: pointer;
 }
-.brush-icon:hover, .eraser-icon:hover, .square-icon:hover, .triangle-icon:hover, .circle-icon:hover, .hexagon-icon:hover {
+.brush-icon:hover, .eraser-icon:hover, .square-icon:hover, .triangle-icon:hover, .circle-icon:hover, .hexagon-icon:hover, .symbrush-icon:hover {
   background-color: rgb(226, 202, 17);
 }
 /* #move {
